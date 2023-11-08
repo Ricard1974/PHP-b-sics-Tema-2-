@@ -6,14 +6,16 @@
 
 $minuts = $_GET['duracio'];
 
+define("PREU_MINIM", 10);
+define("PREU_ADICIONAL", 5);
 
-function calcul_trucada($minuts)
+function calcular_trucada($minuts)
 {
     if ($minuts <= 3) { // minuts menys o igual a 3
-        return 10; // 10 céntimos 3 minuts
+        return PREU_MINIM; // 10 céntimos 3 minuts
     } else {
-        $cost_adicional = ($minuts - 3) * 5; // 5 centims per minut adicional
-        return 10 + $cost_adicional; // Cost total
+        $cost_adicional = ($minuts - 3) * PREU_ADICIONAL; // 5 centims per minut adicional
+        return PREU_MINIM + $cost_adicional; // Cost total
     }
 }
 
@@ -45,7 +47,7 @@ function calcul_trucada($minuts)
         <div class="col bg-success text-white rounded text-center">
             <h1>
                 <?php
-                $total_pagar = calcul_trucada($minuts);
+                $total_pagar = calcular_trucada($minuts);
                 echo "Total a pagar es: " . $total_pagar . " centims";
                 ?>
             </h1>
