@@ -13,6 +13,25 @@ if ($operador == "+") {
     $res = $n1 / $n2;
 }
 
+// switch ($operador) {
+//     case "+":
+//         $res = $n1 + $n2;
+//         break;
+//     case "-":
+//         $res = $n1 - $n2;
+//         break;
+//     case "*":
+//         $res = $n1 * $n2;
+//         break;
+//     case "/":
+//         $res = $n1 / $n2;
+//         break;
+//     default:
+//         // Acción predeterminada si el operador no coincide con ninguno de los casos anteriores
+//         echo "Operador no válido";
+// }
+
+
 ?>
 
 <!doctype html>
